@@ -9,11 +9,11 @@ module file
 
   private
 
-#ifdef LINUX
+! #ifdef LINUX
   character, parameter :: path_separator_ = '/'
-#else
-  character, parameter :: path_separator_ = '\'
-#endif
+! #else
+!   character, parameter :: path_separator_ = '\'
+! #endif
 
 contains
   !=============================================================================
