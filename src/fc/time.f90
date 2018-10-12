@@ -146,8 +146,8 @@ contains
       child => child%next
     end do
 
-    write(lunit,fmt='(a32, a,f16.1,a,a8,a, f16.1,a,a8)') &
-    &          'total', sep,this%root%time, sep, '1', sep,this%root%time, sep, '100.0%'
+    write(lunit,fmt='(a32, a,f16.1,a,a8,a, f16.1,a,a)') &
+    &          'total', sep,this%root%time, sep, '1', sep,this%root%time, sep,' 100.0%'
 
   contains
     recursive subroutine write_step (me, pre)
