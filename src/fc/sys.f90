@@ -1,4 +1,4 @@
-module system
+module sys
 
   implicit none
 
@@ -37,4 +37,4 @@ contains
 
   end subroutine cd
 
-end module system
+end module sys

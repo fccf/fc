@@ -5,5 +5,5 @@ module fc
   use string
   use option
   use time
-  use system
+  use sys
 end module fc
