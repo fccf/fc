@@ -7,10 +7,15 @@ $DEBUG_GNU   = -O0 -g3 -Warray-bounds -Wcharacter-truncation -Wline-truncation -
 $OPTIMIZE    = -O3
 $EXDIRS      =
 
+$fc_lib      = /home/superfun/fc/lib
+$hdf5        = $fc_lib/hdf5
+$psb         = $fc_lib/psblas
+$mld         = $fc_lib/mld2p4
+
 # main modes
 [gnu]
 template  = template-static-gnu
-build_dir = app
+build_dir = build
 
 
 # templates
@@ -25,8 +30,8 @@ colors          = True
 quiet           = False
 log             = False
 jobs            = 10
-preproc         =
+preproc         = -DDOUBLEP
 mpi             = True
-include         =
-libs            =
-ext_libs        =
+include         = $hdf5/include $psb/include $psb/modules $mld/include $mld/modules
+libs            = -L$hdf5/lib -L$psb/lib -L$mld/lib
+ext_libs        = hdf5_fortran hdf5hl_fortran psb_util psb_krylov mld_prec psb_prec psb_base metis blas lapack
